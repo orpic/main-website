@@ -1,0 +1,1 @@
+export const TIME__DEFAULT_IN_APP_NOTIFICATION = 5000;
