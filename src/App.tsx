@@ -1,9 +1,13 @@
-import { Slide, ToastContainer } from "react-toastify";
+import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { TIME__DEFAULT_IN_APP_NOTIFICATION } from "./constants/general";
-import { AppPlacement, LoadingSpinner } from "./components";
+import {
+  AppPlacement,
+  LoadingSpinner,
+  NavigationTabBottomItem,
+} from "./components";
 import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   ROUTE_CONTACT,
   ROUTE_EXPERIENCE,
@@ -11,33 +15,44 @@ import {
   ROUTE_ROOT,
 } from "./constants/route";
 import { Contact, Experience, Homepage, Projects } from "./pages";
-import { GoHome, GoHomeFill } from "react-icons/go";
-import { BsFillGearFill, BsGear } from "react-icons/bs";
+import { images } from "./assets/images";
+import { navigationTabItem } from "./types";
 
-const bottomTab = [
+interface navigationTabItemList extends navigationTabItem {
+  route: string;
+}
+
+const navigationTabItemList: navigationTabItemList[] = [
   {
     name: "Home",
-    activeIcon: <GoHomeFill />,
-    inactiveIcon: <GoHome />,
+    activeIcon: images.homeActive,
+    inActiveIcon: images.homeInActive,
+    route: ROUTE_ROOT,
   },
   {
     name: "Experience",
-    activeIcon: <BsFillGearFill />,
-    inactiveIcon: <BsGear />,
+    activeIcon: images.experienceActive,
+    inActiveIcon: images.experienceInActive,
+    route: ROUTE_EXPERIENCE,
   },
   {
     name: "Projects",
-    activeIcon: <BsFillGearFill />,
-    inactiveIcon: <BsGear />,
+    activeIcon: images.projectActive,
+    inActiveIcon: images.projectInActive,
+    route: ROUTE_PROJECTS,
   },
   {
     name: "Contact",
-    activeIcon: <BsFillGearFill />,
-    inactiveIcon: <BsGear />,
+    activeIcon: images.contactActive,
+    inActiveIcon: images.contactInActive,
+    route: ROUTE_CONTACT,
   },
 ];
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <>
       <ToastContainer
@@ -53,16 +68,41 @@ function App() {
         pauseOnFocusLoss={false}
       />
       <AppPlacement>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            {/* All pages are lazzily imported. See index.ts for exports */}
-            <Route path={ROUTE_ROOT} element={<Homepage />} />
-            <Route path={ROUTE_EXPERIENCE} element={<Experience />} />
-            <Route path={ROUTE_PROJECTS} element={<Projects />} />
-            <Route path={ROUTE_CONTACT} element={<Contact />} />
-          </Routes>
-        </Suspense>
-        {/* <BottomTab */}
+        <div className="h-full w-full flex flex-col ">
+          <div className="h-10 w-full flex-grow">
+            <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  {/* All pages are lazzily imported. See index.ts for exports */}
+                  <Route path={ROUTE_ROOT} element={<Homepage />} />
+                  <Route path={ROUTE_EXPERIENCE} element={<Experience />} />
+                  <Route path={ROUTE_PROJECTS} element={<Projects />} />
+                  <Route path={ROUTE_CONTACT} element={<Contact />} />
+                </Routes>
+              </Suspense>
+              <div className="h-20 flex justify-between items-center ">
+                {navigationTabItemList.map((eachItem) => (
+                  <div
+                    key={eachItem.name}
+                    onClick={() => {
+                      // setSelectedId(eachItem.id);
+                      toast.dismiss();
+                      navigate(eachItem.route);
+                    }}
+                    className="h-full w-full flex flex-col justify-center items-center gap-2 cursor-pointer"
+                  >
+                    <NavigationTabBottomItem
+                      name={eachItem.name}
+                      activeIcon={eachItem.activeIcon}
+                      inActiveIcon={eachItem.inActiveIcon}
+                      active={eachItem.route === location.pathname}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </AppPlacement>
     </>
   );
