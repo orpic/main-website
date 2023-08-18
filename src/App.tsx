@@ -76,7 +76,7 @@ function App() {
             )}
           </div>
           <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
-            <div className="h-10 w-full flex-grow">
+            <div className="h-10 w-full flex-grow sm:h-full">
               <div className={`h-full w-full overflow-auto no-scrollbar`}>
                 <Suspense
                   fallback={
