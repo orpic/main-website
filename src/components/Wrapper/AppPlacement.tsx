@@ -6,7 +6,7 @@ interface AppPlacementProps {
 
 const AppPlacement: React.FC<AppPlacementProps> = ({ children }) => {
   return (
-    <div className="h-screen w-screen bg-zinc-100 flex justify-center">
+    <div className="h-screen w-screen bg-neutral-900 text-stone-100 ">
       {children}
     </div>
   );

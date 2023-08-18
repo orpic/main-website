@@ -69,37 +69,51 @@ function App() {
       />
       <AppPlacement>
         <div className="h-full w-full flex flex-col ">
-          <div className="h-10 w-full flex-grow">
-            <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Routes>
-                  {/* All pages are lazzily imported. See index.ts for exports */}
-                  <Route path={ROUTE_ROOT} element={<Homepage />} />
-                  <Route path={ROUTE_EXPERIENCE} element={<Experience />} />
-                  <Route path={ROUTE_PROJECTS} element={<Projects />} />
-                  <Route path={ROUTE_CONTACT} element={<Contact />} />
-                </Routes>
-              </Suspense>
-              <div className="h-20 flex justify-between items-center ">
-                {navigationTabItemList.map((eachItem) => (
-                  <div
-                    key={eachItem.name}
-                    onClick={() => {
-                      // setSelectedId(eachItem.id);
-                      toast.dismiss();
-                      navigate(eachItem.route);
-                    }}
-                    className="h-full w-full flex flex-col justify-center items-center gap-2 cursor-pointer"
-                  >
-                    <NavigationTabBottomItem
-                      name={eachItem.name}
-                      activeIcon={eachItem.activeIcon}
-                      inActiveIcon={eachItem.inActiveIcon}
-                      active={eachItem.route === location.pathname}
-                    />
-                  </div>
-                ))}
+          <div className="h-14 w-full bg-neutral-950 text-zinc-100 sm:h-24 text-xl flex items-center pl-2 font-semibold">
+            {navigationTabItemList.map(
+              (eachItem) =>
+                `${location.pathname === eachItem.route ? eachItem.name : ""}`
+            )}
+          </div>
+          <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
+            <div className="h-10 w-full flex-grow">
+              <div className={`h-full w-full overflow-auto no-scrollbar`}>
+                <Suspense
+                  fallback={
+                    <div className="flex flex-col items-center justify-center w-full h-full">
+                      <LoadingSpinner height={"h-8"} />
+                    </div>
+                  }
+                >
+                  <Routes>
+                    {/* All pages are lazzily imported. See index.ts for exports */}
+                    <Route path={ROUTE_ROOT} element={<Homepage />} />
+                    <Route path={ROUTE_EXPERIENCE} element={<Experience />} />
+                    <Route path={ROUTE_PROJECTS} element={<Projects />} />
+                    <Route path={ROUTE_CONTACT} element={<Contact />} />
+                  </Routes>
+                </Suspense>
               </div>
+            </div>
+            <div className="h-20 pt-3 pb-2 bg-neutral-950 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
+              {navigationTabItemList.map((eachItem) => (
+                <div
+                  key={eachItem.name}
+                  onClick={() => {
+                    // setSelectedId(eachItem.id);
+                    toast.dismiss();
+                    navigate(eachItem.route);
+                  }}
+                  className="h-full w-full flex flex-col justify-center items-center gap-2 cursor-pointer sm:h-min "
+                >
+                  <NavigationTabBottomItem
+                    name={eachItem.name}
+                    activeIcon={eachItem.activeIcon}
+                    inActiveIcon={eachItem.inActiveIcon}
+                    active={eachItem.route === location.pathname}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
