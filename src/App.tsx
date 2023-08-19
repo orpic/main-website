@@ -69,7 +69,7 @@ function App() {
       />
       <AppPlacement>
         <div className="h-full w-full flex flex-col ">
-          <div className="h-14 w-full bg-neutral-950 text-zinc-100 sm:h-24 text-xl flex items-center pl-2 font-semibold">
+          <div className="h-14 w-full bg-neutral-950 text-zinc-100 text-xl flex items-center pl-2 font-semibold sm:h-24 sm:hidden">
             {navigationTabItemList.map(
               (eachItem) =>
                 `${location.pathname === eachItem.route ? eachItem.name : ""}`
