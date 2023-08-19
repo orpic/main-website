@@ -68,8 +68,8 @@ function App() {
         pauseOnFocusLoss={false}
       />
       <AppPlacement>
-        <div className="h-full w-full flex flex-col ">
-          <div className="h-14 w-full bg-neutral-950 text-zinc-100 text-xl flex items-center pl-2 font-semibold sm:h-24 sm:hidden">
+        <div className="h-full w-full flex flex-col bg-neutral-950">
+          <div className="h-14 w-full bg-neutral-950 text-zinc-100 text-xl flex items-center pl-2  sm:hidden mb-2">
             {navigationTabItemList.map(
               (eachItem) =>
                 `${location.pathname === eachItem.route ? eachItem.name : ""}`
@@ -95,7 +95,7 @@ function App() {
                 </Suspense>
               </div>
             </div>
-            <div className="h-20 pt-3 pb-2 bg-neutral-950 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
+            <div className="h-20 pt-3 pb-2 bg-neutral-800 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
               {navigationTabItemList.map((eachItem) => (
                 <div
                   key={eachItem.name}

@@ -12,6 +12,7 @@ import projectInActive from "./files/projectInActive.png";
 import contactActive from "./files/contactActive.png";
 import contactInActive from "./files/contactInActive.png";
 //
+import skillsAtom from "./files/skillsAtom.png";
 
 export default {
   loading,
@@ -27,5 +28,7 @@ export default {
   //
   contactActive,
   contactInActive,
+  //
+  skillsAtom,
   //
 };
