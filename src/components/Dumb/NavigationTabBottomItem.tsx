@@ -1,15 +1,13 @@
-import { navigationTabItem } from "../../types";
-
-interface NavigationTabBottomItemProps extends navigationTabItem {
+interface NavigationTabBottomItemProps {
+  name: string;
+  activeIcon: string;
+  inActiveIcon: string;
   active: boolean;
 }
 
-const NavigationTabBottomItem: React.FC<NavigationTabBottomItemProps> = ({
-  name,
-  activeIcon,
-  inActiveIcon,
-  active,
-}) => {
+export const NavigationTabBottomItem: React.FC<
+  NavigationTabBottomItemProps
+> = ({ name, activeIcon, inActiveIcon, active }) => {
   return (
     <>
       <div className="">
@@ -17,7 +15,7 @@ const NavigationTabBottomItem: React.FC<NavigationTabBottomItemProps> = ({
         {active && <img className=" h-6 " src={activeIcon} />}
       </div>
       <div
-        className={`text-xs xsm270:text-base ${
+        className={` text-xs xsm270:text-base ${
           active ? "font-bold xsm270:font-semibold" : "opacity-70"
         }`}
       >
@@ -26,5 +24,3 @@ const NavigationTabBottomItem: React.FC<NavigationTabBottomItemProps> = ({
     </>
   );
 };
-
-export default NavigationTabBottomItem;

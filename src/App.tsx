@@ -16,9 +16,11 @@ import {
 } from "./constants/route";
 import { Contact, Experience, Homepage, Projects } from "./pages";
 import { images } from "./assets/images";
-import { navigationTabItem } from "./types";
 
-interface navigationTabItemList extends navigationTabItem {
+interface navigationTabItemList {
+  name: string;
+  activeIcon: string;
+  inActiveIcon: string;
   route: string;
 }
 
@@ -69,12 +71,6 @@ function App() {
       />
       <AppPlacement>
         <div className="h-full w-full flex flex-col bg-neutral-950">
-          <div className="h-14 w-full bg-neutral-950 text-zinc-100 text-xl flex items-center pl-2  sm:hidden mb-2">
-            {navigationTabItemList.map(
-              (eachItem) =>
-                `${location.pathname === eachItem.route ? eachItem.name : ""}`
-            )}
-          </div>
           <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
             <div className="h-10 w-full flex-grow sm:h-full">
               <div className={`h-full w-full overflow-auto no-scrollbar`}>

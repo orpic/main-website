@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { images } from "../assets/images";
+import { TopNavbar } from "../components";
 
-const skillsListAtomTop = [
+const skillsListAtomTop: string[] = [
   "Typescript",
   "Javascript",
   "React JS",
@@ -14,15 +15,15 @@ const skillsListAtomTop = [
   "Nx - Monorepo",
 ];
 
-const name = "Shobhit Umrao";
-const shortDescription = "MERN, Full stack app dev";
+const name: string = "Shobhit Umrao";
+const shortDescription: string = "MERN, Full stack app dev";
 
 const Homepage = () => {
   return (
     <div className="w-full h-full  flex flex-col">
-      <div className="hidden sm:h-14 sm:bg-neutral-900 sm:text-zinc-100"></div>
-      <h1 className="pl-4 text-xl font-semibold tracking-wide">{name}</h1>
-      <h2 className="text-zinc-400 pl-4 tracking-wide">{shortDescription}</h2>
+      <TopNavbar headingText="Home" />
+      <h1 className="pl-4 text-xl font-semibold tracking-wider">{name}</h1>
+      <h2 className="text-zinc-400 pl-4 tracking-wider">{shortDescription}</h2>
       <div className="p-2 bg-neutral-800 my-2 mx-4 rounded-sm">
         <div className="flex items-center gap-2">
           <img
@@ -49,8 +50,7 @@ const Homepage = () => {
 
 export default Homepage;
 
-// description
-const whoAmI =
+const longDescription =
   " I'm a versatile full-stack developer passionate about technology and user-centered solutions. Proficient in both front-end and back-end development, I deliver holistic software solutions. I take pride in crafting clean code that resonates with users. Equally skilled in both domains, I'm committed to continuous growth. As a full-stack enthusiast, I create seamless solutions with a well-rounded skill set. Dedicated to innovation, I'm an ideal candidate for transformative outcomes.";
 
 const Description = () => {
@@ -60,10 +60,10 @@ const Description = () => {
     <div>
       <p
         className={`bg-neutral-800/50 py-2 px-4  ${
-          expanded ? "max-h-full " : "max-h-20 " // Adjust the height classes as needed
+          expanded ? "max-h-full tracking-wider" : "max-h-20 tracking-wide" // Adjust the height classes as needed
         } overflow-hidden transition-max-height duration-300 ease-in-out`}
       >
-        {whoAmI}
+        {longDescription}
       </p>
 
       <p
