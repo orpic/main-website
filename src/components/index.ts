@@ -1,6 +1,7 @@
 // Dumb components
-export { default as LoadingSpinner } from "./Dumb/LoadingSpinner";
-export { default as NavigationTabBottomItem } from "./Dumb/NavigationTabBottomItem";
+export * from "./Dumb/LoadingSpinner";
+export * from "./Dumb/NavigationTabBottomItem";
+export * from "./Dumb/TopNavbar";
 
 // AppWrapper components
-export { default as AppPlacement } from "./Wrapper/AppPlacement";
+export * from "./Wrapper/AppPlacement";

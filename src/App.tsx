@@ -16,9 +16,11 @@ import {
 } from "./constants/route";
 import { Contact, Experience, Homepage, Projects } from "./pages";
 import { images } from "./assets/images";
-import { navigationTabItem } from "./types";
 
-interface navigationTabItemList extends navigationTabItem {
+interface navigationTabItemList {
+  name: string;
+  activeIcon: string;
+  inActiveIcon: string;
   route: string;
 }
 
@@ -68,13 +70,7 @@ function App() {
         pauseOnFocusLoss={false}
       />
       <AppPlacement>
-        <div className="h-full w-full flex flex-col ">
-          <div className="h-14 w-full bg-neutral-950 text-zinc-100 sm:h-24 text-xl flex items-center pl-2 font-semibold">
-            {navigationTabItemList.map(
-              (eachItem) =>
-                `${location.pathname === eachItem.route ? eachItem.name : ""}`
-            )}
-          </div>
+        <div className="h-full w-full flex flex-col bg-neutral-950">
           <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
             <div className="h-10 w-full flex-grow sm:h-full">
               <div className={`h-full w-full overflow-auto no-scrollbar`}>
@@ -95,7 +91,7 @@ function App() {
                 </Suspense>
               </div>
             </div>
-            <div className="h-20 pt-3 pb-2 bg-neutral-950 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
+            <div className="h-20 pt-3 pb-2 bg-neutral-800 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
               {navigationTabItemList.map((eachItem) => (
                 <div
                   key={eachItem.name}

@@ -4,7 +4,9 @@ interface LoadingSpinnerProps {
   height?: string;
 }
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ height = "h-12" }) => {
+export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+  height = "h-12",
+}) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <img
@@ -15,5 +17,3 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ height = "h-12" }) => {
     </div>
   );
 };
-
-export default LoadingSpinner;
