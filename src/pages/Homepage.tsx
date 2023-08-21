@@ -20,7 +20,7 @@ const shortDescription: string = "MERN, Full stack app dev";
 
 const Homepage = () => {
   return (
-    <div className="w-full h-full  flex flex-col">
+    <div className="w-full h-full  flex flex-col ">
       <TopNavbar headingText="Home" />
       <h1 className="pl-4 text-xl font-semibold tracking-wider">{name}</h1>
       <h2 className="text-zinc-400 pl-4 tracking-wider">{shortDescription}</h2>
@@ -44,6 +44,29 @@ const Homepage = () => {
         </div>
       </div>
       <Description />
+      {/* Achievement block start*/}
+      <div className="w-full bg-neutral-800/50 py-2 mt-4">
+        {/* Heading Start*/}
+        <div className="flex items-center gap-x-4 text-lg  px-4 ">
+          <img className="h-6" src={images.achievementTrophy} alt="" />
+          <h2 className="font-semibold tracking-wide">Achievements</h2>
+          <img className="h-8 ml-auto" src={images.arrowLineRight} alt="" />
+        </div>
+        {/* Heading End*/}
+        {/* Card scroller start*/}
+        <div className="w-full mt-4 px-2 overflow-x-auto  flex gap-x-2 no-scrollbar">
+          {/* The actual card start*/}
+          <div className="w-72 my-4 h-36  bg-zinc-800  rounded-md  flex items-center justify-center  flex-shrink-0 text-white">
+            Hello
+          </div>
+          <div className="w-72 my-4 h-36  bg-zinc-800  rounded-md  flex items-center justify-center  flex-shrink-0 text-white">
+            Hello
+          </div>
+          {/* The actual card end*/}
+        </div>
+        {/* Card scroller end */}
+      </div>
+      {/* Achievement block end*/}
     </div>
   );
 };

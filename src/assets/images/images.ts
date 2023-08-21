@@ -16,6 +16,10 @@ import skillsAtom from "./files/skillsAtom.png";
 //
 import arrowUp from "./files/arrowUp.png";
 import arrowDown from "./files/arrowDown.png";
+//
+import achievementTrophy from "./files/achievementTrophy.png";
+//
+import arrowLineRight from "./files/arrowLineRight.png";
 
 export default {
   loading,
@@ -36,5 +40,9 @@ export default {
   //
   arrowUp,
   arrowDown,
+  //
+  achievementTrophy,
+  //
+  arrowLineRight,
   //
 };
