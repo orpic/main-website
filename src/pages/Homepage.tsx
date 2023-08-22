@@ -56,12 +56,7 @@ const Homepage = () => {
         {/* Card scroller start*/}
         <div className="w-full mt-4 px-2 overflow-x-auto  flex gap-x-2 no-scrollbar">
           {/* The actual card start*/}
-          <div className="w-72 my-4 h-96  bg-zinc-800  rounded-md  flex items-center justify-center  flex-shrink-0 text-white">
-            Hello
-          </div>
-          <div className="w-72 my-4 h-96  bg-zinc-800  rounded-md  flex items-center justify-center  flex-shrink-0 text-white">
-            Hello
-          </div>
+          <RecognitionCard />
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
@@ -115,6 +110,30 @@ const Description = () => {
             {expanded ? "Read Less" : "Read More"}
           </button>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const RecognitionCard = () => {
+  return (
+    <div className="w-72 my-4 h-96  bg-zinc-800  rounded-md  flex flex-col items-center justify-center  flex-shrink-0 text-white">
+      <div className="h-48 w-72 bg-orange-500 rounded-tl-md rounded-tr-md">
+        <img
+          loading="lazy"
+          onLoad={() => {}}
+          className="h-48 w-72 rounded-tl-md rounded-tr-md object-cover object-top"
+          src={images.mhrdImage}
+          alt="ministry of education shobhit umrao"
+        />
+      </div>
+      <div className="h-48 w-full  rounded-bl-md rounded-br-md">
+        <p className="">
+          <span className="text-3xl">&#8220;</span>
+          Kudos to Dr. N.S. Raghuvanshi, Director- IIIT Bhopal, Dr. Nitesh
+          Bharadwaj (Faculty) & Mr. Shobhit Umrao (Student). 👏
+          <span className="text-3xl">&#8221;</span>
+        </p>
       </div>
     </div>
   );

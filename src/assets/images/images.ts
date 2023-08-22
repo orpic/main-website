@@ -20,6 +20,8 @@ import arrowDown from "./files/arrowDown.png";
 import achievementTrophy from "./files/achievementTrophy.png";
 //
 import arrowLineRight from "./files/arrowLineRight.png";
+//
+import mhrdImage from "./files/mhrdImage.webp";
 
 export default {
   loading,
@@ -45,4 +47,5 @@ export default {
   //
   arrowLineRight,
   //
+  mhrdImage,
 };
