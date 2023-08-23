@@ -8,7 +8,11 @@ export default {
       ...defaultTheme.screens,
     },
 
-    extend: {},
+    extend: {
+      height: {
+        112: "28rem",
+      },
+    },
   },
   plugins: [],
 };

@@ -54,7 +54,7 @@ const Homepage = () => {
         </div>
         {/* Heading End*/}
         {/* Card scroller start*/}
-        <div className="w-full mt-4 px-2 overflow-x-auto  flex gap-x-2 no-scrollbar">
+        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-2 no-scrollbar">
           {/* The actual card start*/}
           <RecognitionCard />
           {/* The actual card end*/}
@@ -127,13 +127,18 @@ const RecognitionCard = () => {
           alt="ministry of education shobhit umrao"
         />
       </div>
-      <div className="h-48 w-full  rounded-bl-md rounded-br-md">
-        <p className="">
-          <span className="text-3xl">&#8220;</span>
-          Kudos to Dr. N.S. Raghuvanshi, Director- IIIT Bhopal, Dr. Nitesh
-          Bharadwaj (Faculty) & Mr. Shobhit Umrao (Student). 👏
-          <span className="text-3xl">&#8221;</span>
-        </p>
+      <div className="h-48 rounded-bl-md rounded-br-md flex flex-col justify-between">
+        <div className="mx-2 mt-4 p-2 rounded-md bg-zinc-900 text-zinc-50">
+          <p className="tracking-wide">
+            Developed a covid safety application using augmented reality,
+            recognised by Ministry of Education, Government of India
+          </p>
+        </div>
+        <div className="flex items-center justify-center mb-2 ">
+          <button className="border-2 border-zinc-500 px-3 py-1 tracking-wide rounded-md">
+            View Details
+          </button>
+        </div>
       </div>
     </div>
   );
