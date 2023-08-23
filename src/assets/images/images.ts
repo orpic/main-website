@@ -22,6 +22,7 @@ import achievementTrophy from "./files/achievementTrophy.png";
 import arrowLineRight from "./files/arrowLineRight.png";
 //
 import mhrdImage from "./files/mhrdImage.webp";
+import convocationScreenshot from "./files/convocationScreenshot.webp";
 
 export default {
   loading,
@@ -48,4 +49,5 @@ export default {
   arrowLineRight,
   //
   mhrdImage,
+  convocationScreenshot,
 };

@@ -64,6 +64,14 @@ const Homepage = () => {
             }
             onViewDetailsClick={() => {}}
           />
+          <RecognitionCard
+            imgSrc={images.convocationScreenshot}
+            imgSrcAlt={"convocation shobhit umrao"}
+            descriptionPara={
+              "Special mention at 2021 Batch IIIT Bhopal's convocation by Hon'ble Director"
+            }
+            onViewDetailsClick={() => {}}
+          />
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
