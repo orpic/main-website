@@ -72,7 +72,7 @@ function App() {
       <AppPlacement>
         <div className="h-full w-full flex flex-col bg-neutral-950">
           <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
-            <div className="h-10 w-full flex-grow sm:h-full">
+            <div className="h-10 w-full sm:w-10 flex-grow sm:h-full">
               <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
                 <Suspense
                   fallback={

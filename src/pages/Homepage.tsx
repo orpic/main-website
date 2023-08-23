@@ -54,7 +54,7 @@ const Homepage = () => {
         </div>
         {/* Heading End*/}
         {/* Card scroller start*/}
-        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-2 no-scrollbar">
+        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
           {/* The actual card start*/}
           <RecognitionCard
             imgSrc={images.mhrdImage}
@@ -68,10 +68,28 @@ const Homepage = () => {
             imgSrc={images.convocationScreenshot}
             imgSrcAlt={"convocation shobhit umrao"}
             descriptionPara={
-              "Special mention at 2021 Batch IIIT Bhopal's convocation by Hon'ble Director"
+              "Recieved a special mention at 2021 Batch IIIT Bhopal's convocation by our Hon'ble Director, IIIT Bhopal"
             }
             onViewDetailsClick={() => {}}
           />
+          {/* The actual card end*/}
+        </div>
+        {/* Card scroller end */}
+      </div>
+      {/* Achievement block end*/}
+      {/* Achievement block start*/}
+      <div className="w-full bg-neutral-800/50 py-4 mt-4">
+        {/* Heading Start*/}
+        <div className="flex items-center gap-x-4 text-lg  px-4 ">
+          <img className="h-6" src={images.experienceActive} alt="" />
+          <h2 className="font-semibold tracking-wide">Experience</h2>
+          <img className="h-7 ml-auto" src={images.arrowLineRight} alt="" />
+        </div>
+        {/* Heading End*/}
+        {/* Card scroller start*/}
+        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
+          {/* The actual card start*/}
+
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
