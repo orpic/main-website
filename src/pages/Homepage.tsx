@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { images } from "../assets/images";
 import { TopNavbar } from "../components";
 
@@ -56,7 +56,14 @@ const Homepage = () => {
         {/* Card scroller start*/}
         <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-2 no-scrollbar">
           {/* The actual card start*/}
-          <RecognitionCard />
+          <RecognitionCard
+            imgSrc={images.mhrdImage}
+            imgSrcAlt={"ministry of education shobhit umrao"}
+            descriptionPara={
+              "Developed a covid safety application using augmented reality, recognised by Ministry of Education, Government of India"
+            }
+            onViewDetailsClick={() => {}}
+          />
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
@@ -115,7 +122,32 @@ const Description = () => {
   );
 };
 
-const RecognitionCard = () => {
+// imgSrc images.mhrdImage
+// imgSrcAlt ministry of education shobhit umrao
+// descriptionPara  Developed a covid safety application using augmented reality, recognised by Ministry of Education, Government of India
+// onViewDetailsClick
+
+interface RecognitionCardProps {
+  imgSrc: string;
+  imgSrcAlt: string;
+  descriptionPara: string;
+  onViewDetailsClick: () => void;
+}
+
+const RecognitionCard: React.FC<RecognitionCardProps> = ({
+  imgSrc,
+  imgSrcAlt,
+  descriptionPara,
+  onViewDetailsClick,
+}) => {
+  const handleViewDetailsClick = (
+    event:
+      | React.MouseEvent<HTMLButtonElement>
+      | React.TouchEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+    onViewDetailsClick();
+  };
   return (
     <div className="w-72 my-4 h-96  bg-zinc-800  rounded-md  flex flex-col items-center justify-center  flex-shrink-0 text-white">
       <div className="h-48 w-72 bg-orange-500 rounded-tl-md rounded-tr-md">
@@ -123,19 +155,20 @@ const RecognitionCard = () => {
           loading="lazy"
           onLoad={() => {}}
           className="h-48 w-72 rounded-tl-md rounded-tr-md object-cover object-top"
-          src={images.mhrdImage}
-          alt="ministry of education shobhit umrao"
+          src={imgSrc}
+          alt={imgSrcAlt}
         />
       </div>
       <div className="h-48 rounded-bl-md rounded-br-md flex flex-col justify-between">
         <div className="mx-2 mt-4 p-2 rounded-md bg-zinc-900 text-zinc-50">
-          <p className="tracking-wide">
-            Developed a covid safety application using augmented reality,
-            recognised by Ministry of Education, Government of India
-          </p>
+          <p className="tracking-wide">{descriptionPara}</p>
         </div>
         <div className="flex items-center justify-center mb-2 ">
-          <button className="border-2 border-zinc-500 px-3 py-1 tracking-wide rounded-md">
+          <button
+            onTouchEnd={handleViewDetailsClick}
+            onClick={handleViewDetailsClick}
+            className="border-2 border-zinc-500 px-3 py-1 tracking-wide rounded-md"
+          >
             View Details
           </button>
         </div>
