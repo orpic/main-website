@@ -23,6 +23,8 @@ import arrowLineRight from "./files/arrowLineRight.png";
 //
 import mhrdImage from "./files/mhrdImage.webp";
 import convocationScreenshot from "./files/convocationScreenshot.webp";
+//
+import openInNewTab from "./files/openInNewTab.png";
 
 export default {
   loading,
@@ -50,4 +52,6 @@ export default {
   //
   mhrdImage,
   convocationScreenshot,
+  //
+  openInNewTab,
 };
