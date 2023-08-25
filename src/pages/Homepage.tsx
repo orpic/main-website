@@ -77,7 +77,7 @@ const Homepage = () => {
         {/* Card scroller end */}
       </div>
       {/* Achievement block end*/}
-      {/* Achievement block start*/}
+      {/* Experience block start*/}
       <div className="w-full bg-neutral-800/50 py-4 mt-4">
         {/* Heading Start*/}
         <div className="flex items-center gap-x-4 text-lg  px-4 ">
@@ -89,12 +89,46 @@ const Homepage = () => {
         {/* Card scroller start*/}
         <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
           {/* The actual card start*/}
-
+          <div className="h-56 bg-neutral-800/50 p-2 rounded-lg">
+            <div className="flex justify-between text-sm text-zinc-400">
+              <p className="">Present...</p>
+              <p>...2023</p>
+            </div>
+            <p className="text-lg text-zinc-100 font-semibold">
+              Frontend developer
+            </p>
+            <p className="text-lg text-zinc-300">
+              Taxiwars{" "}
+              <span className="text-zinc-400">( Samviv technologies )</span>
+            </p>
+            <hr className="my-1 border-0 h-[1px] bg-zinc-400" />
+            <div className="">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Role one sad j kljsa dakljl</td>
+                    <td>Role 2</td>
+                    <td>Role 3</td>
+                  </tr>
+                  <tr>
+                    <td>Role one</td>
+                    <td>Role 2</td>
+                    <td>Role 3</td>
+                  </tr>
+                  <tr>
+                    <td>Role one</td>
+                    <td>Role 2</td>
+                    <td>Role 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
       </div>
-      {/* Achievement block end*/}
+      {/* Experience block end*/}
     </div>
   );
 };
