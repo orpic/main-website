@@ -25,6 +25,8 @@ import mhrdImage from "./files/mhrdImage.webp";
 import convocationScreenshot from "./files/convocationScreenshot.webp";
 //
 import openInNewTab from "./files/openInNewTab.png";
+import bulletPoints from "./files/bulletPoints.png";
+//
 
 export default {
   loading,
@@ -54,4 +56,5 @@ export default {
   convocationScreenshot,
   //
   openInNewTab,
+  bulletPoints,
 };

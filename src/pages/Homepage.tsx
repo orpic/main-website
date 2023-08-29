@@ -102,26 +102,35 @@ const Homepage = () => {
               <span className="text-zinc-400">( Samviv technologies )</span>
             </p>
             <hr className="my-1 border-0 h-[1px] bg-zinc-400" />
-            <div className="">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>Role one sad j kljsa dakljl</td>
-                    <td>Role 2</td>
-                    <td>Role 3</td>
-                  </tr>
-                  <tr>
-                    <td>Role one</td>
-                    <td>Role 2</td>
-                    <td>Role 3</td>
-                  </tr>
-                  <tr>
-                    <td>Role one</td>
-                    <td>Role 2</td>
-                    <td>Role 3</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="flex justify-between gap-x-4">
+              <ul className="">
+                <li className="flex items-center gap-x-1">
+                  <img
+                    className="h-3 opacity-60"
+                    src={images.bulletPoints}
+                    alt=""
+                  />
+                  string
+                </li>
+                <li className="flex items-center gap-x-1">
+                  <img className="h-3" src={images.bulletPoints} alt="" />
+                  string
+                </li>
+                <li className="flex items-center gap-x-1">
+                  <img className="h-3" src={images.bulletPoints} alt="" />
+                  string
+                </li>
+              </ul>
+              <ul>
+                <li>string</li>
+                <li>string</li>
+                <li>string</li>
+              </ul>
+              <ul>
+                <li>string</li>
+                <li>string</li>
+                <li>string</li>
+              </ul>
             </div>
           </div>
           {/* The actual card end*/}
