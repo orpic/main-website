@@ -16,6 +16,17 @@ import skillsAtom from "./files/skillsAtom.png";
 //
 import arrowUp from "./files/arrowUp.png";
 import arrowDown from "./files/arrowDown.png";
+//
+import achievementTrophy from "./files/achievementTrophy.png";
+//
+import arrowLineRight from "./files/arrowLineRight.png";
+//
+import mhrdImage from "./files/mhrdImage.webp";
+import convocationScreenshot from "./files/convocationScreenshot.webp";
+//
+import openInNewTab from "./files/openInNewTab.png";
+import bulletPoints from "./files/bulletPoints.png";
+//
 
 export default {
   loading,
@@ -37,4 +48,13 @@ export default {
   arrowUp,
   arrowDown,
   //
+  achievementTrophy,
+  //
+  arrowLineRight,
+  //
+  mhrdImage,
+  convocationScreenshot,
+  //
+  openInNewTab,
+  bulletPoints,
 };

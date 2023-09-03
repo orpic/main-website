@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { images } from "../assets/images";
 import { TopNavbar } from "../components";
 
@@ -20,7 +20,7 @@ const shortDescription: string = "MERN, Full stack app dev";
 
 const Homepage = () => {
   return (
-    <div className="w-full h-full  flex flex-col">
+    <div className="w-full h-full  flex flex-col ">
       <TopNavbar headingText="Home" />
       <h1 className="pl-4 text-xl font-semibold tracking-wider">{name}</h1>
       <h2 className="text-zinc-400 pl-4 tracking-wider">{shortDescription}</h2>
@@ -44,6 +44,100 @@ const Homepage = () => {
         </div>
       </div>
       <Description />
+      {/* Achievement block start*/}
+      <div className="w-full bg-neutral-800/50 py-4 mt-4">
+        {/* Heading Start*/}
+        <div className="flex items-center gap-x-4 text-lg  px-4 ">
+          <img className="h-6" src={images.achievementTrophy} alt="" />
+          <h2 className="font-semibold tracking-wide">Recognition</h2>
+          <img className="h-7 ml-auto" src={images.arrowLineRight} alt="" />
+        </div>
+        {/* Heading End*/}
+        {/* Card scroller start*/}
+        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
+          {/* The actual card start*/}
+          <RecognitionCard
+            imgSrc={images.mhrdImage}
+            imgSrcAlt={"ministry of education shobhit umrao"}
+            descriptionPara={
+              "Developed a covid safety application using augmented reality, recognised by Ministry of Education, Government of India"
+            }
+            onViewDetailsClick={() => {}}
+          />
+          <RecognitionCard
+            imgSrc={images.convocationScreenshot}
+            imgSrcAlt={"convocation shobhit umrao"}
+            descriptionPara={
+              "Recieved a special mention at 2021 Batch IIIT Bhopal's convocation by our Hon'ble Director, IIIT Bhopal"
+            }
+            onViewDetailsClick={() => {}}
+          />
+          {/* The actual card end*/}
+        </div>
+        {/* Card scroller end */}
+      </div>
+      {/* Achievement block end*/}
+      {/* Experience block start*/}
+      <div className="w-full bg-neutral-800/50 py-4 mt-4">
+        {/* Heading Start*/}
+        <div className="flex items-center gap-x-4 text-lg  px-4 ">
+          <img className="h-6" src={images.experienceActive} alt="" />
+          <h2 className="font-semibold tracking-wide">Experience</h2>
+          <img className="h-7 ml-auto" src={images.arrowLineRight} alt="" />
+        </div>
+        {/* Heading End*/}
+        {/* Card scroller start*/}
+        <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
+          {/* The actual card start*/}
+          <div className="h-56 bg-neutral-800/50 p-2 rounded-lg">
+            <div className="flex justify-between text-sm text-zinc-400">
+              <p className="">Present...</p>
+              <p>...2023</p>
+            </div>
+            <p className="text-lg text-zinc-100 font-semibold">
+              Frontend developer
+            </p>
+            <p className="text-lg text-zinc-300">
+              Taxiwars{" "}
+              <span className="text-zinc-400">( Samviv technologies )</span>
+            </p>
+            <hr className="my-1 border-0 h-[1px] bg-zinc-400" />
+            <div className="flex justify-between gap-x-4">
+              <ul className="">
+                <li className="flex items-center gap-x-1">
+                  <img
+                    className="h-3 opacity-60"
+                    src={images.bulletPoints}
+                    alt=""
+                  />
+                  string
+                </li>
+                <li className="flex items-center gap-x-1">
+                  <img className="h-3" src={images.bulletPoints} alt="" />
+                  string
+                </li>
+                <li className="flex items-center gap-x-1">
+                  <img className="h-3" src={images.bulletPoints} alt="" />
+                  string
+                </li>
+              </ul>
+              <ul>
+                <li>string</li>
+                <li>string</li>
+                <li>string</li>
+              </ul>
+              <ul>
+                <li>string</li>
+                <li>string</li>
+                <li>string</li>
+              </ul>
+            </div>
+          </div>
+          {/* The actual card end*/}
+        </div>
+        {/* Card scroller end */}
+      </div>
+      {/* Experience block end*/}
     </div>
   );
 };
@@ -90,6 +184,61 @@ const Description = () => {
           />
           <button className="-mt-0.5">
             {expanded ? "Read Less" : "Read More"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// imgSrc images.mhrdImage
+// imgSrcAlt ministry of education shobhit umrao
+// descriptionPara  Developed a covid safety application using augmented reality, recognised by Ministry of Education, Government of India
+// onViewDetailsClick
+
+interface RecognitionCardProps {
+  imgSrc: string;
+  imgSrcAlt: string;
+  descriptionPara: string;
+  onViewDetailsClick: () => void;
+}
+
+const RecognitionCard: React.FC<RecognitionCardProps> = ({
+  imgSrc,
+  imgSrcAlt,
+  descriptionPara,
+  onViewDetailsClick,
+}) => {
+  const handleViewDetailsClick = (
+    event:
+      | React.MouseEvent<HTMLButtonElement>
+      | React.TouchEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+    onViewDetailsClick();
+  };
+  return (
+    <div className="w-72 my-4 h-96  bg-zinc-800  rounded-md  flex flex-col items-center justify-center  flex-shrink-0 text-white">
+      <div className="h-48 w-72 bg-orange-500 rounded-tl-md rounded-tr-md">
+        <img
+          loading="lazy"
+          onLoad={() => {}}
+          className="h-48 w-72 rounded-tl-md rounded-tr-md object-cover object-top"
+          src={imgSrc}
+          alt={imgSrcAlt}
+        />
+      </div>
+      <div className="h-48 rounded-bl-md rounded-br-md flex flex-col justify-between">
+        <div className="mx-2 mt-4 p-2 rounded-md bg-zinc-900 text-zinc-50">
+          <p className="tracking-wide">{descriptionPara}</p>
+        </div>
+        <div className="flex items-center justify-center mb-2 ">
+          <button
+            onTouchEnd={handleViewDetailsClick}
+            onClick={handleViewDetailsClick}
+            className="border-2 border-zinc-500 px-3 py-1 tracking-wide rounded-md"
+          >
+            View Details
           </button>
         </div>
       </div>
