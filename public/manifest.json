@@ -1,0 +1,31 @@
+{
+  "short_name": "Shobhit",
+  "name": "Shobhit Umrao",
+  "icons": [
+    {
+      "src": "/shobhit.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/shobhit512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/shobhit512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["standalone"],
+  "theme_color": "#262626",
+  "background_color": "#262626",
+  "description": "Shobhit Umrao - Full Stack Developer | Android",
+  "dir": "ltr",
+  "lang": "en"
+}
