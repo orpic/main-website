@@ -5,6 +5,16 @@
       "namespace": "android_app",
       "package_name": "app.shobhit.twa",
       "sha256_cert_fingerprints": [
+        "B4:F2:1F:02:D5:14:0B:E2:32:FA:C1:AE:A3:B2:E0:8B:FF:8D:6F:32:11:ED:E3:27:96:4C:7D:1D:03:03:68:7E"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.shobhit.twa",
+      "sha256_cert_fingerprints": [
         "02:75:F0:E0:D7:7C:47:7F:10:C2:D7:3B:8F:75:ED:CC:46:C8:7C:76:D5:09:5C:62:9E:DF:DB:00:B4:23:58:42"
       ]
     }
