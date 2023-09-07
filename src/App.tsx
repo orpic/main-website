@@ -11,11 +11,13 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   ROUTE_CONTACT,
   ROUTE_EXPERIENCE,
+  ROUTE_PRIVACY,
   ROUTE_PROJECTS,
   ROUTE_ROOT,
 } from "./constants/route";
 import { Contact, Experience, Homepage, Projects } from "./pages";
 import { images } from "./assets/images";
+import Privacy from "./pages/Privacy";
 
 interface navigationTabItemList {
   name: string;
@@ -87,6 +89,7 @@ function App() {
                     <Route path={ROUTE_EXPERIENCE} element={<Experience />} />
                     <Route path={ROUTE_PROJECTS} element={<Projects />} />
                     <Route path={ROUTE_CONTACT} element={<Contact />} />
+                    <Route path={ROUTE_PRIVACY} element={<Privacy />} />
                   </Routes>
                 </Suspense>
               </div>
