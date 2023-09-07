@@ -12,7 +12,7 @@ const skillsListAtomTop: string[] = [
   "CSS",
   "CSS Modules",
   "Tailwind",
-  "Nx - Monorepo",
+  "Monorepo",
 ];
 
 const name: string = "Shobhit Umrao";
