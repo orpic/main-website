@@ -34,7 +34,7 @@ const headingTextWithList: HeadingTextWithList[] = [
   },
   {
     headingText: "Languages",
-    list: ["TypeScipt", "JavaScript", "Kotlin"],
+    list: ["TypeScript", "JavaScript", "Kotlin"],
   },
   {
     headingText: "Frameworks",

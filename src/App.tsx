@@ -75,6 +75,16 @@ function App() {
       <AppPlacement>
         <div className="h-full w-full flex flex-col bg-neutral-950">
           <div className="h-full w-full flex flex-col sm:flex-row-reverse ">
+            {/* The blog posts div start */}
+            <div className="bg-neutral-800 hidden md:block md:w-80 lg:w-96 md:h-full">
+              <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
+                <h2 className="sticky top-0  text-xl mt-6 text-center">
+                  Featured
+                </h2>
+                {/* The cards */}
+              </div>
+            </div>
+            {/* The blog posts div end */}
             <div className="h-10 w-full sm:w-10 flex-grow sm:h-full">
               <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
                 <Suspense
@@ -96,6 +106,7 @@ function App() {
                 </Suspense>
               </div>
             </div>
+
             <div className="h-20 pt-3 pb-2 bg-neutral-800 flex justify-between items-center sm:flex-col sm:pl-2 sm:pr-3 sm:justify-center sm:gap-16 sm:w-24 sm:h-auto ">
               {navigationTabItemList.map((eachItem) => (
                 <div
