@@ -89,50 +89,7 @@ const Homepage = () => {
         {/* Card scroller start*/}
         <div className="w-full mt-4 px-6 overflow-x-auto  flex gap-x-4 no-scrollbar">
           {/* The actual card start*/}
-          <div className="h-56 bg-neutral-800/50 p-2 rounded-lg">
-            <div className="flex justify-between text-sm text-zinc-400">
-              <p className="">Present...</p>
-              <p>...2023</p>
-            </div>
-            <p className="text-lg text-zinc-100 font-semibold">
-              Frontend developer
-            </p>
-            <p className="text-lg text-zinc-300">
-              Taxiwars{" "}
-              <span className="text-zinc-400">( Samviv technologies )</span>
-            </p>
-            <hr className="my-1 border-0 h-[1px] bg-zinc-400" />
-            <div className="flex justify-between gap-x-4">
-              <ul className="">
-                <li className="flex items-center gap-x-1">
-                  <img
-                    className="h-3 opacity-60"
-                    src={images.bulletPoints}
-                    alt=""
-                  />
-                  string
-                </li>
-                <li className="flex items-center gap-x-1">
-                  <img className="h-3" src={images.bulletPoints} alt="" />
-                  string
-                </li>
-                <li className="flex items-center gap-x-1">
-                  <img className="h-3" src={images.bulletPoints} alt="" />
-                  string
-                </li>
-              </ul>
-              <ul>
-                <li>string</li>
-                <li>string</li>
-                <li>string</li>
-              </ul>
-              <ul>
-                <li>string</li>
-                <li>string</li>
-                <li>string</li>
-              </ul>
-            </div>
-          </div>
+          <ExperienceCard />
           {/* The actual card end*/}
         </div>
         {/* Card scroller end */}
@@ -243,5 +200,65 @@ const RecognitionCard: React.FC<RecognitionCardProps> = ({
         </div>
       </div>
     </div>
+  );
+};
+
+interface ExperienceCardProps {}
+
+const ExperienceCard: React.FC<ExperienceCardProps> = () => {
+  return (
+    <>
+      <div className="h-56  bg-neutral-800/50 p-2 rounded-lg">
+        <div className="flex justify-between text-sm text-zinc-400">
+          <p className="">Present...</p>
+          <p>...2023</p>
+        </div>
+        <p className="text-lg text-zinc-100 font-semibold">
+          Frontend developer
+        </p>
+        <p className="text-lg text-zinc-300">
+          Taxiwars{" "}
+          <span className="text-zinc-400">( Samviv technologies )</span>
+        </p>
+        <hr className="my-1 border-0 h-[1px] bg-zinc-400" />
+        <div className="flex justify-between gap-x-4">
+          <ul className="">
+            <li className="flex items-center gap-x-1">
+              <img
+                className="h-3 opacity-80"
+                src={images.bulletPoints}
+                alt=""
+              />
+              Customer app
+            </li>
+            <li className="flex items-center gap-x-1">
+              <img
+                className="h-3 opacity-80"
+                src={images.bulletPoints}
+                alt=""
+              />
+              Driver app
+            </li>
+          </ul>
+          <ul>
+            <li className="flex items-center gap-x-1">
+              <img
+                className="h-3 opacity-80"
+                src={images.bulletPoints}
+                alt=""
+              />
+              Razorpay PG integration
+            </li>
+            <li>string</li>
+            <li>string</li>
+          </ul>
+          <ul>
+            <li>string</li>
+            <li>string</li>
+            <li>string</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 };

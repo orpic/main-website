@@ -14,8 +14,9 @@ import {
   ROUTE_PRIVACY,
   ROUTE_PROJECTS,
   ROUTE_ROOT,
+  ROUTE_USES,
 } from "./constants/route";
-import { Contact, Experience, Homepage, Projects } from "./pages";
+import { Contact, Experience, Homepage, Projects, Uses } from "./pages";
 import { images } from "./assets/images";
 import Privacy from "./pages/Privacy";
 
@@ -90,6 +91,7 @@ function App() {
                     <Route path={ROUTE_PROJECTS} element={<Projects />} />
                     <Route path={ROUTE_CONTACT} element={<Contact />} />
                     <Route path={ROUTE_PRIVACY} element={<Privacy />} />
+                    <Route path={ROUTE_USES} element={<Uses />} />
                   </Routes>
                 </Suspense>
               </div>
