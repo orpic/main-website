@@ -46,14 +46,14 @@ const Uses = () => {
   return (
     <div className="w-full h-full  flex flex-col ">
       <TopNavbar headingText="Uses" />
-      <h1 className="pl-4 text-xl font-semibold tracking-wider">{name}</h1>
-      <p className="px-6 mt-4 tracking-wide">Below is my development setup.</p>
+      <h1 className="pl-12 text-xl font-semibold tracking-wider">{name}</h1>
+      <p className="px-14 mt-4 tracking-wide">Below is my development setup.</p>
       {headingTextWithList.map((eachHeading) => (
         <>
-          <h2 className="pl-6 mt-6 font-bold tracking-wider text-lg">
+          <h2 className="pl-14 mt-6 font-bold tracking-wider text-lg">
             # {eachHeading.headingText}
           </h2>
-          <ul className="pl-12 list-disc">
+          <ul className="pl-20 list-disc">
             {eachHeading.list.map((eachItem) => (
               <li className="tracking-wide">{eachItem}</li>
             ))}

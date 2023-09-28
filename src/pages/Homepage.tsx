@@ -4,19 +4,18 @@ import { TopNavbar } from "../components";
 
 const skillsListAtomTop: string[] = [
   "Typescript",
-  "Javascript",
-  "React JS",
-  "Next JS",
-  "Express",
-  "Node",
-  "CSS",
-  "CSS Modules",
-  "Tailwind",
-  "Monorepo",
+  "javascript",
+  "react.js",
+  "next.js",
+  "express",
+  "node",
+  "css",
+  "tailwind",
+  "nx monorepo",
 ];
 
 const name: string = "Shobhit Umrao";
-const shortDescription: string = "MERN, Full stack app dev";
+const shortDescription: string = "Full stack developer";
 
 const Homepage = () => {
   return (

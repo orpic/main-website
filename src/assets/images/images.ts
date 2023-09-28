@@ -27,6 +27,7 @@ import convocationScreenshot from "./files/convocationScreenshot.webp";
 import openInNewTab from "./files/openInNewTab.png";
 import bulletPoints from "./files/bulletPoints.png";
 //
+import playStoreFrontTitle from "./files/playStoreFrontTitle.webp";
 
 export default {
   loading,
@@ -57,4 +58,7 @@ export default {
   //
   openInNewTab,
   bulletPoints,
+  //
+  //featured
+  playStoreFrontTitle,
 };
