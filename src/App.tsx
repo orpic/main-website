@@ -7,8 +7,8 @@ import {
   LoadingSpinner,
   NavigationTabBottomItem,
 } from "./components";
-import { Suspense, useState } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Suspense } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import {
   ROUTE_CONTACT,
   ROUTE_EXPERIENCE,
@@ -56,9 +56,6 @@ const navigationTabItemList: navigationTabItemList[] = [
 ];
 
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
   return (
     <>
       <ToastContainer
@@ -146,56 +143,3 @@ const MainSection = () => {
     </div>
   );
 };
-
-// const FeaturedSection = () => {
-//   return (
-//     <div className="bg-neutral-800 hidden md:block md:w-80 lg:w-96 md:h-full">
-//       <div className={`h-full w-full overflow-y-auto no-scrollbar`}>
-//         <h2 className="sticky top-0 bg-neutral-800 text-2xl pt-6 mb-2 pb-2 text-center">
-//           Featured
-//         </h2>
-//         {/* The cards */}
-//         <FeaturedSectionCards />
-//       </div>
-//     </div>
-//   );
-// };
-
-// const FeaturedSectionCards = () => {
-//   const [imageLoading, setImageLoading] = useState(true);
-//   return (
-//     <div className=" bg-neutral-900 mx-6 mb-6 rounded-lg flex flex-col">
-//       {imageLoading && (
-//         <div className="h-48 w-full grid rounded-t-lg  bg-neutral-700">
-//           <LoadingSpinner height="h-8" />
-//         </div>
-//       )}
-//       <div className="h-48 m-2  rounded-t-md rounded-b-sm">
-//         <img
-//           onLoad={() => {
-//             setImageLoading(false);
-//           }}
-//           src={images.playStoreFrontTitle}
-//           alt=""
-//           className="rounded-t-md rounded-b-sm h-full  object-cover"
-//         />
-//       </div>
-//       <p className="px-4 pb-4 pt-2">
-//         Sample apps (PWA's) packaged with Kotlin for play store. These work
-//         offline as well
-//       </p>
-//       <div className="rounded-b-lg ">
-//         <div className="mx-2 py-2 mb-2 rounded-sm pl-2 bg-neutral-800 text-xl font-semibold ">
-//           <a
-//             rel="noreferrer"
-//             target="_blank"
-//             href="https://play.google.com/store/apps/dev?id=5883558879247234907"
-//             className="border-b-[1px] w-fit flex items-center gap-x-2"
-//           >
-//             Play Store <img src={images.openInNewTab} alt="" className="h-4" />
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
