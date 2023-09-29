@@ -1,6 +1,17 @@
 import { FeaturedSectionCard, LoadingSpinner } from "../../components";
 import { images } from "../../assets/images";
 import React, { Suspense } from "react";
+import { FeaturedSectionCardProps } from "../../types";
+
+const featuredSectionCardData: FeaturedSectionCardProps[] = [
+  {
+    src: images.playStoreFrontTitle,
+    description:
+      "Sample apps (PWA's) packaged with Kotlin for play store. These work offline as well",
+    link: "https://play.google.com/store/apps/dev?id=5883558879247234907",
+    linkText: "Play Store",
+  },
+];
 
 const FeaturedSection: React.FC = () => {
   return (
@@ -11,12 +22,14 @@ const FeaturedSection: React.FC = () => {
         </h2>
         {/* The cards */}
         <Suspense fallback={<LoadingSpinner height={"h-8"} />}>
-          <FeaturedSectionCard
-            src={images.playStoreFrontTitle}
-            description="Sample apps (PWA's) packaged with Kotlin for play store. These work offline as well"
-            link="https://play.google.com/store/apps/dev?id=5883558879247234907"
-            linkText="Play Store"
-          />
+          {featuredSectionCardData.map((eachItem) => (
+            <FeaturedSectionCard
+              src={eachItem.src}
+              description={eachItem.description}
+              link={eachItem.link}
+              linkText={eachItem.linkText}
+            />
+          ))}
         </Suspense>
       </div>
     </div>

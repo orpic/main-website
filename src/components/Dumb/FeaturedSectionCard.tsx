@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { images } from "../../assets/images";
 import { LoadingSpinner } from "..";
-
-interface FeaturedSectionCardProps {
-  src: string;
-  description: string;
-  link: string;
-  linkText: string;
-}
+import { FeaturedSectionCardProps } from "../../types";
 
 const FeaturedSectionCard: React.FC<FeaturedSectionCardProps> = ({
   src,
